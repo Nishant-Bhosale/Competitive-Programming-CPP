@@ -1,0 +1,10 @@
+In this problem you have to reverse a number.
+
+Sample Input:
+5690
+
+Sample Output:
+0
+9
+6
+5
