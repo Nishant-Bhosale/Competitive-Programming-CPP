@@ -1,0 +1,26 @@
+In this problem you have to check whether a given number is prime or not.
+
+A prime number is a number that is only divisible by itself and 1.
+
+At first you need to take a number "t" as input representing the count of input numbers to be tested. And then take a number "n" as input, "t" number of times.
+
+All you have to do is for each input value of n, print "prime" if the number is prime and "not prime" otherwise.
+
+OUTPUT :-
+
+Sample Input:
+
+5
+13
+2
+3
+4
+5
+
+Sample Output:
+
+prime
+prime
+prime
+not prime
+prime
