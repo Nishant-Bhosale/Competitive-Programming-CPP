@@ -1,0 +1,20 @@
+You have to print all prime numbers between a range.
+
+Take as input "low", the lower limit of range.
+
+Take as input "high", the higher limit of range.
+
+For the range print all the primes numbers between low and high (both included).
+
+
+
+Input format
+low
+high
+Output format
+n1
+n2
+.. all primes between low and high (both included)
+
+Constraints
+2 <= low < high < 10 ^ 6
