@@ -1,0 +1,6 @@
+Given two numbers n and k, we have to rotate the number n by k digits. If k is positive, right rotate the number i.e. remove k rightmost digits and make them leftmost. Else for negative values of k, left rotate the number, i.e. remove k digits from left and make them rightmost digits.
+Eg) Rotating 562984 by +2 will give 846529, whereas rotating it by -2 will give 652984.
+
+Note: k can be larger than the number of digits in number n. In that case, we will ignore rotations of the whole number and left/rotate only the rotations left after reduction.
+
+Eg) If we are asked to rotate 562984 by +9, then we will ignore rotation of +6 (number of digits) and rotate it by +3, i.e. 984562.
