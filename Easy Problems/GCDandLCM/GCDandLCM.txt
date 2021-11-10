@@ -1,0 +1,4 @@
+You are required to print the Greatest Common Divisor (GCD) of two numbers.
+You are also required to print the Lowest Common Multiple (LCM) of the same numbers.
+Take input "num1" and "num2" as the two numbers.
+Print their GCD and LCM.
