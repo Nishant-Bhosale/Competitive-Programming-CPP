@@ -1,0 +1,8 @@
+Print the given pattern
+
+*	
+*	*	
+*	*	*	
+*	*	*	*	
+*	*	*	*	*	
+*	*	*	*	*	*	
