@@ -1,0 +1,9 @@
+Print the following pattern
+
+         *	
+		*	*	*	
+	*	*	*	*	*	
+*	*	*	*	*	*	*	
+	*	*	*	*	*	
+		*	*	*	
+			*	
