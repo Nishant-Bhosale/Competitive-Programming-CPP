@@ -1,14 +1,17 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
 int main(){
-   int arrSize;
+   int arrSize, element;
    cin>>arrSize;
 
-   int arr[arrSize];
+   vector<int> vec1;
 
    for(int i = 0; i < arrSize; i++){
-      cin>>arr[i];
+      cout<<"Enter element"<<endl;
+      cin>>element;
+      vec1.push_back(element);
    }
 
    int numToFind;
@@ -17,7 +20,7 @@ int main(){
    cin>>numToFind;
 
    for(int i = 0; i < arrSize; i++){
-      if(arr[i] == numToFind){
+      if(vec1[i] == numToFind){
          cout<<i<<endl;
          return 0;
       }
