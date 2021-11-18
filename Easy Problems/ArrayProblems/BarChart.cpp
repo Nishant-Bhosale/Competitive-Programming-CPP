@@ -22,7 +22,7 @@ int main(){
    }
 
    for(int floor = maxHeight; floor >= 1; floor--){
-      for(int i = 0; i <= buildingHeight.size(); i++){
+      for(int i = 0; i < buildingHeight.size(); i++){
          if(buildingHeight[i] >= floor){
             cout<<"*\t";
          }else{
