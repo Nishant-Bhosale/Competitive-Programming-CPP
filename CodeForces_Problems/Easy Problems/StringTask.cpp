@@ -1,9 +1,14 @@
-#include<bits/stdc++.h>
-main()
-{ char s;
-while(std::cin>>s)
-{
-  if(!std::strchr("AEIOUYaeiouy",s))
-  std::cout<<s;
-  std::cout<<"."<<(char)tolower(s);
-}}
+#include<iostream>
+using namespace std;
+
+int main(){
+   char inp;
+
+   while(cin>>inp){
+      inp = tolower(inp);
+      if(!(inp=='a'||inp=='e'||inp=='i'||inp=='o'||inp=='u'||inp=='y')){
+         cout<<'.'<<inp;
+      }
+   }
+   return 0;
+}
