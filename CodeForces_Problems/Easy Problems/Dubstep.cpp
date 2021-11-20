@@ -1,19 +1,13 @@
 #include<iostream>
+#include<regex>
 using namespace std;
 
 int main(){
-   char wub;
-   int count = 0;
-   while(cin>>wub){
-      if(wub != 'W' && wub != 'U' && wub != 'B'){
-         cout<<wub;
-         count++;
-      }
-      if(count > 0 && wub == 'W'){
-         cout<<" ";
-         count = 0;
-      }
-   }
+   string wub;
+   cin>>wub;
+   regex p("WUB");
+
+   cout<<regex_replace(wub,p," ");
 
    return 0;
 }
