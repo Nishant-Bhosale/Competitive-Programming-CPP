@@ -24,13 +24,6 @@ int main(){
       secondArr.push_back(arrElements);
    }
 
-   // vector<int> smallArr = firstArr;
-   // vector<int> bigArr = secondArr;
-
-   // if(smallArr.size() > secondArr.size()){
-   //    smallArr = secondArr;
-   //    bigArr = firstArr;
-   // }
    int biggerSize = firstArrSize;
    int smallerSize = secondArrSize;
 
@@ -74,5 +67,7 @@ int main(){
       cout<<num<<endl;
    }
 
+
    return 0;
 }
+

@@ -12,8 +12,8 @@ int main(){
             minVal = (i * a) + (b * m);
          }
       }else{
-         if((((n - i) % m) + i) * a + (b * m) < minVal){
-            minVal = (n % b) * a + (b * m);
+         if((((n - i) % m) + i) * a + (b * (m - (n - i) % m)) < minVal){
+            minVal = (((n - i) % m) + i) * a + (b * (m - (n - i) % m)) ;
          }
       }
    }  
