@@ -1,43 +1,31 @@
 #include<iostream>
-#include<vector>
-#include<utility>
 #include<algorithm>
+#include<vector>
 using namespace std;
 
 int main(){
-   int n, sub;
-
+   int n, t;
    cin>>n;
-   vector<int> subs;
+
+   vector<int> vec1, vec2, vec3;
+
    for(int i = 0; i<n; i++){
-      cin>>sub;
-      subs.push_back(sub);
-   }
-
-   int oneI = 0, twoI = 0, threeI = 0;
-
-   for(int i = 0; i<subs.size(); i++){
-      if(subs[i] == 1){
-         oneI += 1;
-      }else if(subs[i] == 2){
-         twoI += 1;
-      }else{
-         threeI += 1;
+      cin>>t;
+      if(t == 1){
+         vec1.push_back(i + 1);
+      }else if(t == 2){
+         vec2.push_back(i + 1);
+      }else if(t == 3){
+         vec3.push_back(i + 1);
       }
    }
 
-   int minOfTwo = min(oneI, twoI);
-   int minTeams= min(minOfTwo, threeI);
+   int minVal = min(vec1.size(), min(vec2.size(), vec3.size()));
 
-   cout<<minTeams<<endl;
+   cout<<minVal<<endl;
 
-   for(int i = 0; i<subs.size(); i++){
-      vector<int> team; 
-      for(int j = 0; j<subs.size(); j++){
-         if(subs[j] == 1){
-            team.push_back(subs[j]);
-         }
-      }
+   for(int i = 0; i < minVal; i++){
+      cout<<vec1[i]<<" "<<vec2[i]<<" "<<vec3[i]<<endl;
    }
 
    return 0;
