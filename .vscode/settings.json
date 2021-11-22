@@ -15,7 +15,10 @@
       "iostream": "cpp",
       "bitset": "cpp",
       "utility": "cpp",
-      "*.tcc": "cpp"
+      "*.tcc": "cpp",
+      "chrono": "cpp",
+      "algorithm": "cpp",
+      "set": "cpp"
    },
    "C_Cpp.errorSquiggles": "Disabled"
 }
