@@ -18,7 +18,8 @@
       "*.tcc": "cpp",
       "chrono": "cpp",
       "algorithm": "cpp",
-      "set": "cpp"
+      "set": "cpp",
+      "random": "cpp"
    },
    "C_Cpp.errorSquiggles": "Disabled"
 }

@@ -1,28 +1,20 @@
-#include<iostream>
-#include<utility>
-#include<vector>
+ #include<bits/stdc++.h>
 using namespace std;
-
+set<int>a,b;
 int main(){
-   int row, col;
-   cin>>row>>col;
-   set<int> st;
-   char arr[row][col];
-   for(int i = 0; i<row; i++){
-      for(int j = 0; j<col; j++){
-         char ch;
-         cin>>ch;
-         arr[i][j] = ch;
-      }
+int n,m,i,j;
+ 
+char ch;
+cin>>n>>m;
+for(i=0;i<n;i++)
+for(j=0;j<m;j++){
+    cin>>ch;
+    if(ch=='S'){
+      a.insert(i);
+      b.insert(j);
    }
-
-   for(int i = 0; i < row; i++){
-      for(int j = 0; j < col; j++){
-         // cout<<arr[i][j]<<endl;
-         if(a[i][j] == 'S'){
-            st.insert(i);
-         }
-      }
-   }
-   return 0;
+}
+cout<<m*n-a.size() * b.size();
+ 
+return 0;
 }
