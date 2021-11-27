@@ -15,10 +15,11 @@ int main(){
       calcVal = s + ((s/100) * c);      
 
       if(calcVal >= a && calcVal <= b){
-         cout<<"YES"<<endl;
+         cout<<"Yes"<<endl;
       }else{
          cout<<"No"<<endl;
       }
    }
+   
    return 0;
 }

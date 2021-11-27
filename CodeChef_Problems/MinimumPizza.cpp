@@ -1,6 +1,13 @@
 #include<iostream>
 using namespace std;
 
+int gcd(int a, int b){
+   if(b == 0){
+      return a;
+   }
+   return gcd(b, a%b);
+}
+
 int main(){
    int t;
 
@@ -11,16 +18,19 @@ int main(){
 
       cin>>n>>k;
 
-      if(n % k == 0){
-         cout<<(n / k)<<endl;
-      }else{
-         for(int i = 2; i <= 150; i++){
-            if((k * i) % n == 0){
-               cout<<i<<endl;
-               break;
-            }
-         }
-      }
+      // if(n % k == 0){
+      //    cout<<(n / k)<<endl;
+      // }else{
+         // for(int i = 2; i <= n*k; i++){
+         //    if((k * i) % n == 0){
+         //       cout<<i<<endl;
+         //       break;
+         //    }
+         // }
+         int res = gcd(n, k);
+         int p = n / res;
+         cout<<p<<endl;
+      // }
    }
    return 0;
 }
