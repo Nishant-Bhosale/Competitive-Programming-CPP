@@ -17,10 +17,7 @@ int main(){
       int n, k;
 
       cin>>n>>k;
-
-      // if(n % k == 0){
-      //    cout<<(n / k)<<endl;
-      // }else{
+         //TIME LIMIT EXCEEDED ON THIS ONE
          // for(int i = 2; i <= n*k; i++){
          //    if((k * i) % n == 0){
          //       cout<<i<<endl;
@@ -30,7 +27,6 @@ int main(){
          int res = gcd(n, k);
          int p = n / res;
          cout<<p<<endl;
-      // }
    }
    return 0;
 }
