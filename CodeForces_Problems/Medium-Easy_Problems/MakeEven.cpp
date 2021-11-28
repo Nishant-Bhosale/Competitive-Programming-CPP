@@ -1,43 +1,33 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int reverseNum(int num){
-   int rem = 0, reverse = 0;
-
-   while(num!=0){    
-      rem=num%10;      
-      reverse=reverse*10+rem;    
-      num/=10;    
-   }    
-   return reverse;
-}
-
 int main(){
-   int t, n;
+   int t;
    cin>>t;
 
    while(t--){
-      int len = 0;
+      string n;
       cin>>n;
 
-      if(n % 2 == 0){
-         cout<<0<<endl;
-      }else if(reverseNum(n) % 2 == 0){
-         cout<<1<<endl;
-      }else{
-         while(n > 0){
-            n/=10;
-            len++;
-         }
-         if(len == 1){
-            cout<<-1<<endl;
-         }else{
-            int c = 0;
-            for(int i = 2; i < len - 1; i++){
-               
-            }
-         }
+      if((n.back() - '0') % 2 == 0){
+         cout<<"0\n";
+         continue;
+      }else if((n[0] - '0') % 2 == 0){
+         cout<<"1\n";
+         continue;
       }
+
+      int c2 = count(n.begin(), n.end(), '2');
+      int c4 = count(n.begin(), n.end(), '4');
+      int c6 = count(n.begin(), n.end(), '6');
+      int c8 = count(n.begin(), n.end(), '8');
+
+      if(c2 > 0 || c4 > 0 || c6 > 0 || c8 > 0){
+         cout<<"2\n";
+         continue;
+      }
+
+      cout<<"-1\n";
    }
    return 0;
 }
