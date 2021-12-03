@@ -1,4 +1,4 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main(){
@@ -7,21 +7,23 @@ int main(){
    cin>>t;
 
    while(t--){
-      char first, second, third;
-      char c1, c2;
-      cin>>first>>second>>third;
+      int n;
+      vector<int> arr;
+      cin>>n;
 
-      cin>>c1>>c2;
+      if(n == 1){
+         cout<<0<<endl;
+         continue;
+      }
 
-      if(first == c1 || first == c2){
-         cout<<first<<endl;
-         continue;
-      }else if(second == c1 || second == c2){
-         cout<<second<<endl;
-         continue;
-      }else if(third == c1 || third == c2){
-         cout<<third<<endl;
-         continue;
+      for(int i = 0; i < n; i++){
+         int a;
+         cin>>a;
+         arr.emplace_back(a);
+      }
+
+      for(int i = 0; i < arr.size() - 1; i++){
+         if(arr[i])
       }
    }
 
