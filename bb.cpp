@@ -7,43 +7,30 @@ int main(){
    cin>>t;
 
    while(t--){
-      int n;
-      vector<int> arr;
-      cin>>n;
+      int m, n;
 
-      for(int i = 0; i < n; i++){
-         int a;
-         cin>>a;
-         arr.emplace_back(a);
-      }
+      cin>>m>>n;
 
-      if(arr.size() == 1){
-         cout<<0<<endl;
-         continue;
-      }
-
-      bool isDup = false;
-
-      for(int i = 0; i < arr.size() - 1; i++){
-         if(count(arr.begin(), arr.end(), arr[i]) > 1){
-            isDup = true;
-            break;
+      if(m > n){
+         string s = "";
+         int cnt = 1;
+         while(m != 0){
+            m += "01";
+            cnt++;
+            m--;
          }
-      }
+         m += "0";
+         cout<<m<<endl;
+         continue;
+      }else if(m == n){
 
-      if(isDup){
-         cout<<(n - 1)<<endl;
-      }else{
-         cout<<-1<<endl;
+         continue;
+      }else if(m < n){
+
+         continue;
       }
    }
 
    return 0;
 }
 
-// for(int j = i+1; j < arr.size() - 1; j++){
-         //    if(arr[i] == arr[j]){
-         //       isDup = true;
-         //       break;
-         //    }
-         // }
