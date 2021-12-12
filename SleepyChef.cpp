@@ -25,7 +25,6 @@ int main(){
             mc += 1;
             cnt0 = 0;
          }
-
       }
 
       cout<<mc<<endl;
