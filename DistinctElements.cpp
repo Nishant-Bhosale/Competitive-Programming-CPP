@@ -1,9 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// #define int long long abc;
+
 int main(){
    int t;
-   int mod = 1e9 + 7;
+   long long mod = 1e9 + 7;
    cin>>t;
 
    while(t--){
@@ -19,7 +21,7 @@ int main(){
          mp[num]++;
       }
 
-      int ans = 1;
+      long long ans = 1;
       for(auto it : mp){
          ans *= (1 + it.second);
          ans %= mod;
