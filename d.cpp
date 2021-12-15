@@ -9,17 +9,23 @@ int main(){
       int n;
       cin>>n;
 
-      string a = "";
-
+      vector<string> arr;
       for(int i = 0; i < n - 2; i++){
          string st;
          cin>>st;
-         a += st;
+         arr.emplace_back(st);
       }
 
-      for(int i = 0; i < a.size() - 1; i++){
-         
+      string ans = "";
+      for(int i = 0; i < arr.size() - 1; i++){
+         if(arr[i][1] != arr[i + 1][0]){
+            ans += arr[i];
+         }else{
+            ans += (arr[i][0] + arr[i + 1][0]);
+         }
       }
+
+      cout<<ans<<endl;
    }
    return 0;
 }
