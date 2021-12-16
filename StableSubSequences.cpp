@@ -17,11 +17,22 @@ int main(){
          arr.emplace_back(num);
       }
 
+      int maxa = max(arr.begin(), arr.end());
+
       if(count(arr.begin(), arr.end(), arr[0]) == arr.size()){
          cout<<0<<endl;
-      }else{
-         cout<<arr.size() - 1<<endl;
       }
+
+      cout<<maxa;
+      // }else{
+      //    int max = 0;
+
+      //    for(int i = 0; i < n; i++){
+      //       if(arr[i] > max){
+
+      //       }
+      //    }
+      // }
    }
    return 0;
 }
