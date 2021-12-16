@@ -22,8 +22,6 @@ int main(){
       }else{
          cout<<arr.size() - 1<<endl;
       }
-
-
    }
    return 0;
 }
