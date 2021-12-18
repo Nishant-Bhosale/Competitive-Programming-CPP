@@ -18,9 +18,6 @@ int main(){
          mp[num]++;
       }
 
-      // for(auto it: mp){
-      //    cout<<it.second<<endl;
-      // }
       cout<<(abs(mp[3] + mp[1]))<<endl;
    }
    return 0;
