@@ -19,6 +19,7 @@ int main(){
       cin>>n;
 
       vi arr;
+      
       for(int i = 0; i < n; i++){
          int num; cin>>num;
          arr.emplace_back(num);
