@@ -15,22 +15,13 @@ int main(){
    cin>>t;
 
    while(t--){
-      int p, q, n, k;
+      int n;
+      cin>>n;
 
-      cin>>p>>q>>n;
-
-      k = p / q;
-      int ans = 0;
-      if(k < 1){
-         ans = 1 / (1 - abs(k));
+      vi arr;
+      for(int i = 0; i < n; i++){
+         
       }
-      if(k > 1){
-         ans = 1 / (abs(k) - 1);
-      }
-      
-      int orAns = floor(1/2 * ans * n);
-      cout<<orAns<<endl;
    }
-
    return 0;
 }
