@@ -11,17 +11,21 @@ typedef long long ll;
 int main(){
    ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-   int t;
-   cin>>t;
+   ll x, y, z;
 
-   while(t--){
-      int n;
-      cin>>n;
+   cin>>x>>y>>z;
 
-      vi arr;
-      for(int i = 0; i < n; i++){
-         
-      }
+   ll totalCoconuts = 0;
+
+   totalCoconuts = (x + y) / z;
+
+   ll ans;
+   if(totalCoconuts == ((x / z) + (y / z))){
+      ans = 0;
+   }else{
+      ans = min(z - (x % z), z - (y % z));
    }
+
+   cout<<totalCoconuts<<" "<<ans<<endl;
    return 0;
 }
