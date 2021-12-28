@@ -36,8 +36,7 @@ int main(){
          continue;
       }else{
          cout<<"NO"<<endl;
-      }
-      
+      }  
    }
 
    return 0;
