@@ -13,54 +13,22 @@ int main(){
 
    int t;
    cin>>t;
-
    while(t--){
-      int n;
+      ll n;
       cin>>n;
-      int arr[n];
-      int arr2[n];
-      vi zarr;
-      vi oneArr;
-      map<int, int> mp;
 
-      for(int i = 0; i < n; i++){
-         cin>>arr[i];
-         arr2[i] = arr[i];
-         mp[arr[i]] = i;
+      if(n == 1){
+         cout<<1<<"\n"<<1<<" "<<1<<"\n";
+      }else if(n == 2){
+         cout<<2<<"\n"<<3<<" "<<1<<"\n"<<4<<" "<<1<<"\n";
+      }else if(n == 3){
+         cout<<2<<"\n"<<1<<" "<<1<<"\n"<<2<<" "<<2<<"\n";
+      }else if(n == 4){
+         cout<<1<<"\n"<<1<<" "<<4<<"\n";
+      }else{
+         cout<<2<<"\n"<<2<<" "<<n-1<<"\n"<<(n-2)<<" "<<1<<"\n";
       }
 
-      string s;
-      cin>>s;
-
-      for(int i = 0; i < n; i++){
-         if(s[i] == '0'){
-            zarr.emplace_back(arr[i]);
-         }else{
-            oneArr.emplace_back(arr[i]);
-         }
-      }
-
-      sort(zarr.begin(), zarr.end());
-      sort(oneArr.begin(), oneArr.end());
-      sort(arr, arr + n);
-
-      reverse(zarr.begin(), zarr.end());
-      reverse(oneArr.begin(), oneArr.end());
-      reverse(arr, arr + n);
-      int i;
-      for(i = 0; i < oneArr.size(); i++){
-         arr2[mp[oneArr[i]]] = arr[i];
-      }
-
-      for(int j = 0; j < zarr.size(); j++){
-         arr2[mp[zarr[j]]] = arr[i];
-         i++;
-      }
-
-      for(int i = 0; i < n; i++){
-         cout<<arr2[i]<<" ";
-      }
-      cout<<endl;
    }
 
    return 0;
