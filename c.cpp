@@ -15,36 +15,25 @@ int main(){
    cin>>t;
 
    while(t--){
-      int n, k;
-      cin>>n>>k;
+      int n;
+      cin>>n;
+      vector<int, vector<bool>> mark;
 
-      vector<long long> arr;
-      ll sum = 0;
-      for(ll i = 0; i < n; i++){
-         ll num;
-         cin>>num;
-         sum += num;
-         arr.emplace_back(num);
+      vector<int> l(n);
+      vector<int> r(n);
+      for(int i = 0; i < n; i++){
+         cin>>l[i]>>r[i];
+         mark[l[i]][r[i]] = true;
       }
 
-      if(n == 1){
-         cout<<abs(arr[0] - k)<<endl;
-         continue;
-      }
-
-      if(sum <= num){
-         for(auto it : arr){
-            cout<<arr<<" ";
+      for(int i = 0; i < n; i++){
+         for(int j = l[i]; j <= r[i]; j++){
+            if((j == l[i] || mark[l[i]][j - 1]) && (j == r[i] || mark[j + 1][r[i]])){
+               cout<<l[i]<<" "<<r[i]<<" "<<j<<endl;
+               break;
+            }
          }
-         cout<<endl;
-         continue;
       }
-
-      sort(arr.begin(), arr.end());
-      ll maxEl = arr[arr.size() - 1];
-      ll minEl = arr[0];
-
-      
    }
 
    return 0;
