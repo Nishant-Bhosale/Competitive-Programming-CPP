@@ -20,18 +20,15 @@ int main(){
       string s;
       cin>>s;
 
-      if(count(s.begin(), s.end(), s[0]) == n){
-         cout<<s[0]<<s[1]<<endl;
-         continue;
-      }
-
+      string ans = "";
+      ans += s[0];
       if(s[0] == s[1] || s[1] > s[0]){
-         cout<<s[0]<<s[0]<<endl;
+         cout<<ans;
+         reverse(ans.begin(), ans.end());
+         cout<<ans<<endl;
          continue;
       }
       
-      string ans = "";
-      ans += s[0];
       for(int i = 1; i < n; i++){
          if(s[i] <= s[i - 1]){
             ans += s[i];
