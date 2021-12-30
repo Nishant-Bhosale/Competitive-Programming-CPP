@@ -21,26 +21,28 @@ int main(){
       cin>>s;
 
       if(count(s.begin(), s.end(), s[0]) == n){
-         if(n % 2 == 0){
-            for(int i = 0; i < n/2; i++){
-               cout<<s[0];
-            }
-         }else{
-            for(int i = 0; i < n/2 + 1; i++){
-               cout<<s[0];
-            }
-         }
-         cout<<endl;
-         continue;
-      }
-      
-      sort(s.begin(), s.end());
-
-      if(s[0] == s[1]){
          cout<<s[0]<<s[1]<<endl;
          continue;
       }
-      cout<<s<<endl;
+
+      if(s[0] == s[1] || s[1] > s[0]){
+         cout<<s[0]<<s[0]<<endl;
+         continue;
+      }
+      
+      string ans = "";
+      ans += s[0];
+      for(int i = 1; i < n; i++){
+         if(s[i] <= s[i - 1]){
+            ans += s[i];
+         }else{
+            break;
+         }
+      }
+      
+      cout<<ans;
+      reverse(ans.begin(), ans.end());
+      cout<<ans<<endl;
    }
 
    return 0;
