@@ -24,7 +24,7 @@ int main(){
    vi psum(n);
    psum[0] = arr[0];
    for(int i = 1; i < n; i++){
-      psum[i] = psum[i - 1] + arr[i];
+      psum[i] =  psum[i - 1] + arr[i];
    }
 
    for(int i = 0; i < n; i++){
