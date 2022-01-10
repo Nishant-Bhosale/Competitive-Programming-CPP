@@ -98,3 +98,70 @@ while(q--)
 	cout<<ans<<"\n";
 }
  return 0;}
+
+ //UNOPTIMIZED SOLUTION
+
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// #define vi vector<int>
+// #define vii vector<int,int>
+// #define rep(a,b) for(int i = a;i<b;i++)
+// #define pi pair<int,int>
+
+// typedef long long ll;
+
+// int main(){
+//    ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+
+//    int n, m, u, q;
+//    cin>>n>>m>>u>>q;
+
+//    int arr[n][m];
+//    for(int i = 0; i < n; i++){
+//       for(int j = 0; j < m; j++){
+//          cin>>arr[i][j];
+//       }
+//    }
+
+//    for(int i = 0; i < u; i++){
+//       int k, r1, c1, r2, c2;
+
+//       cin>>k>>r1>>c1>>r2>>c2;
+
+//       int maxR = max(r1, r2);
+//       int minR = min(r1, r2);
+//       int maxC = max(c1, c2);
+//       int minC = min(c1, c2);
+
+//       for(int j = 0; j < n; j++){
+//          for(int t = 0; t < m; t++){
+//             if(!(j > maxR || t > maxC) && !(j < minR || t < minC)){
+//                arr[j][t] += k; 
+//             }
+//          }
+//       }
+//    }
+
+//    for(int i = 0; i < q; i++){
+//       int r1, c1, r2, c2;
+
+//       cin>>r1>>c1>>r2>>c2;
+
+//       int maxR = max(r1, r2);
+//       int minR = min(r1, r2);
+//       int maxC = max(c1, c2);
+//       int minC = min(c1, c2);
+//       int sum = 0;
+//       for(int j = 0; j < n; j++){
+//          for(int t = 0; t < m; t++){
+//             if(!(j > maxR || t > maxC) && !(j < minR || t < minC)){
+//                sum += arr[j][t];
+//             }
+//          }
+//       }
+
+//       cout<<sum<<endl;
+//    }
+//    return 0;
+// }
