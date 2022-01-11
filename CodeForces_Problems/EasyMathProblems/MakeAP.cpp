@@ -23,15 +23,25 @@ int main(){
          cout<<"YES"<<endl;
          continue;
       }
-      ll minE = min(a, min(b,c));
-      ll diff1 = c - b;
-      ll diff2 = b - a;
 
-      if((diff1) % minE == 0 && (diff2) % minE == 0){
+      ll diff = 2*b - a;
+      if(diff > 0 && diff % c == 0){
          cout<<"YES"<<endl;
-      }else{
-         cout<<"NO"<<endl;
+         continue;
       }
+      
+      ll diff2 = 2*b - c;
+      if(diff2 > 0 && diff2 % a == 0){
+         cout<<"YES"<<endl;
+         continue;
+      }
+
+      if((c + a) % (2 * b) == 0){
+         cout<<"YES"<<endl;
+         continue;
+      }
+
+      cout<<"NO"<<endl;
    }
 
    return 0;
