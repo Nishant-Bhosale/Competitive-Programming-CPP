@@ -27,11 +27,12 @@ int main(){
 
       ll number = 1;
       ll idx = 0;
-
-      while(arr[idx] != number && idx < n){
+      
+      while(idx < n){
          if(arr[idx] == number){
             idx++;
             number++;
+            continue;
          }
 
          arr[idx] /= 2;
