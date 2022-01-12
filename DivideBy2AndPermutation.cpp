@@ -16,27 +16,33 @@ int main(){
 
    while(t--){
       ll n;
+      cin>>n;
       vector<ll> arr;
+      vector<int> used(n + 1, false);
       for(int i = 0; i < n; i++){
          ll num; 
          cin>>num;
          arr.emplace_back(num);
       }
 
-      sort(arr.begin(), arr.end());
+      sort(arr.begin(), arr.end(), [](ll a, ll b){
+         return a > b;
+      });
 
-      ll number = 1;
-      ll idx = 0;
-      
-      while(idx < n){
-         if(arr[idx] == number){
-            idx++;
-            number++;
-            continue;
+      bool ok = true;
+
+      for(int i = 0; i < n; i++){
+         ll x = arr[i];
+
+         while(x > n || used[x]){
+            x /= 2;
          }
 
-         arr[idx] /= 2;
+         if(x > 0) used[x] = true;
+         else ok = false;
       }
+
+      cout<<(ok ? "YES" : "NO")<<endl;
    }
 
    return 0;
