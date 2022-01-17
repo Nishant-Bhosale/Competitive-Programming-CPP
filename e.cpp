@@ -11,45 +11,28 @@ typedef long long ll;
 int main(){
    ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-   int t;
-   cin>>t;
+   ll n;
+   cin>>n;
    
-   while(t--){
-      string s;
-      cin>>s;
+   vector<ll> arr;   
+   for(int i = 0; i < n; i++){
+      ll num;
+      cin>>num;
+      arr.emplace_back(num);
+   }
 
-      string ans = "";
-      if(s[1] != '0'){
-         int a = 0;
-         a += ((s[0] - '0') + (s[1] - '0'));
-         string b = to_string(a);
-         ans += b;
-         for(int i = 2; i < s.size(); i++){
-            ans += s[i];
-         }
-         cout<<ans<<endl;
-      }else{
-         int idx;
-         for(int i = 2; i < s.size(); i++){
-            if(s[i] != '0' && s[i + 1] != '0'){
-               idx = i;
-            }
-         }
-         for(int i = 0; i < idx; i++){
-            ans += s[i];
-         }
+   sort(arr.begin(), arr.end());
 
-         int a = 0;
-         a += ((s[idx] - '0') + (s[idx + 1] - '0'));
-         string b = to_string(a);
-         ans += b;
-
-         for(int i = idx + 2; i < s.size(); i++){
-            ans += s[i];
-         }
-         cout<<ans<<endl;
+   ll cnt = 0;
+   ll j = 0;
+   ll maxVal = -1;
+   for(int i = 0; i < n; i++){
+      while(j < n && arr[j] - arr[i] <= 5){
+         j++;
+         maxVal = max(maxVal, j - i);
       }
    }
 
+   cout<<maxVal<<endl;
    return 0;
 }
