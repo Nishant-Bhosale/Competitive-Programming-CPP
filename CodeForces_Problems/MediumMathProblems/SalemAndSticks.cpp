@@ -11,28 +11,32 @@ typedef long long ll;
 int main(){
    ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-   ll n;
+   int n;
    cin>>n;
-   
-   vector<ll> arr;   
+
+   vi arr;
    for(int i = 0; i < n; i++){
-      ll num;
+      int num;
       cin>>num;
+
       arr.emplace_back(num);
    }
 
-   sort(arr.begin(), arr.end());
+   int t1 = 1;
+   int minVal = 9999999;
+   for(int i = 1; i < 101; i++){
+      int sum = 0;
+      for(int j = 0; j < arr.size(); j++){
+         sum += max(abs(arr[j] - i) - 1, 0);
+      } 
 
-   ll cnt = 0;
-   ll j = 0;
-   ll maxVal = -1;
-   for(int i = 0; i < n; i++){
-      while(j < n && arr[j] - arr[i] <= 5){
-         j++;
-         maxVal = max(maxVal, j - i);
+      if(sum < minVal){
+         minVal = sum;
+         t1 = i;
       }
    }
 
-   cout<<maxVal<<endl;
+   cout<<t1<<" "<<minVal<<endl;
+
    return 0;
 }
