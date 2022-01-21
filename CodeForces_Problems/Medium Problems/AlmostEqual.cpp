@@ -20,7 +20,7 @@ int main(){
       cout<<"YES"<<endl;
       for(int i = 0; i < 2*n; i++){
          if(i < n){
-            cout<<(i + i + i % 2) + 1<<" ";
+            cout<<((2 * i)+ i % 2) + 1<<" ";
          }else{
             cout<<((i - n)*2 + i % 2) + 1<<" ";
          }
