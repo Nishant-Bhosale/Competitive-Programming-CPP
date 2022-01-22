@@ -18,11 +18,14 @@ int main(){
       ll n, a;
       cin>>n>>a;
 
-      ll andOp = n & a;
-      cout<<andOp;
-
-      if(andOp >= a || andOp <= n){
-         cout<<((andOp % 2) ? "EVEN" : "ODD")<<endl;
+      if(a % 2 != 0){
+         if(n % 2 != 0){
+            cout<<"ODD"<<endl;
+         }else{
+            cout<<"EVEN"<<endl;
+         }
+      }else if(n == 1){
+         cout<<"EVEN"<<endl;
       }else{
          cout<<"IMPOSSIBLE"<<endl;
       }
