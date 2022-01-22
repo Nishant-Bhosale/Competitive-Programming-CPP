@@ -25,7 +25,7 @@ int main(){
          ans.emplace_back(min(last, n - sum));
          sum += last;
          last--;
-      }
+      }.
 
       if(sum < n){
          cout<<-1<<endl;
