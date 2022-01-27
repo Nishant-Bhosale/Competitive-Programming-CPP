@@ -20,7 +20,7 @@ int main(){
 
       vector<ll> arr(n + 1);
       vector<vector<ll>> pos(n+2);// array to store the all the positions of an element in a given array
-      //e.g [1, 3, 4, 1] pos = [[1, 4],[],[2],[3]]
+      //e.g [1, 3, 4, 1] pos = [[], [1, 4] , [], [2], [3]]
       for(ll i = 1; i <= n; i++){
          cin>>arr[i];
          pos[arr[i]].emplace_back(i);
