@@ -24,17 +24,13 @@ int main(){
          continue;
       }
 
-      if(a % 2 == 1 && b % 2 == 1){
-         ll maxVal = max(a, b);
-         cout<<(maxVal * maxVal)<<endl;
-      }else{
-         a += a;
-         b += b;
-
-         ll minVal = min(a, b);
-
-         cout<<(minVal * minVal)<<endl;
+      if(a == (2 * b) || b == (2 * a)){
+         cout<<max(a, b) * max(a, b)<<endl;
+         continue;
       }
+
+      ll minVal = min(max(a, 2*b), max(2*a, b));
+      cout<<minVal * minVal<<endl;
    }
 
    return 0;
