@@ -9,7 +9,7 @@ using namespace std;
 typedef long long ll;
 
 void solve(){
-   ll n, x, y;
+   ll n, x, y, sum = 0;
    cin>>n>>x>>y;
 
    vector<ll> arr;
@@ -17,32 +17,15 @@ void solve(){
       ll num;
       cin>>num;
       arr.emplace_back(num);
+      sum += num;
    }
 
-   bool flag = false;
-   for(ll i = 0; i < n; i++){
-      if(arr[i] < y){
-         flag = true;
-         break;
-      }
-   }
+   ll val = y % 2;
 
-   if(flag){
+   if((x + (sum)) % 2 == val){
       cout<<"Alice"<<endl;
    }else{
-      ll ans = 0;
-      ll diff = y - x;
-      ll val = 3;
-      sort(arr.begin(), arr.end());
-
-      for(ll i = 0; i < n; i++){
-         val += arr[i];
-         if(val > diff){
-            val = val ^ 3;
-         }
-      }
-
-      cout<<val<<endl;
+      cout<<"Bob"<<endl;
    }
 }
 
