@@ -23,7 +23,20 @@ int main(){
          for(ll i = 1; i <= n; i++){
             cout<<i<<endl;
          }
+      }else{
+         if(n % 2 == 1){
+            cout<<"NO"<<endl;
+         }else{
+            cout<<"YES"<<endl;
+            for(ll i = 1; i <= n; i++){
+               for(ll j = 0; j < k; j++){
+                  cout<<(i + n*j)<<" ";
+               }
+               cout<<endl;
+            }          
+         }
       }
+
    }
 
    return 0;
