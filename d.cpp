@@ -15,22 +15,43 @@ int main(){
    cin>>t;
 
    while(t--){
-      ll hei, ops;
+      ll n, k;
+      cin>>n>>k;
 
-      cin>>hei>>ops;
-      //Brute force
-
-      ll inv = 1, currH = 0;
-
-      while(ops){
-         currH += inv;
-         inv = 0;
-         inv += currH;
-         ops--;
+      if(n == k){
+         for(ll i = 0; i < n; i++){
+            cout<<(n)<<" ";
+         }
+         cout<<"\n";
+         continue;
       }
 
-      cout<<inv<<endl;
-      cout<<currH<<endl;
+      if(k == (n*(n + 1) / 2)){
+         for(ll i = 1; i <= n; i++){
+            cout<<i<<" ";
+         }
+         cout<<"\n";
+         continue;
+      }
+
+      k -= n;
+
+      vector<ll> arr;
+      ll cnt = 0;
+      while(k >= cnt){
+         arr.emplace_back(cnt + 1);
+         k -= cnt;
+         cnt += 1;
+      }
+
+      while(arr.size() < n){
+         arr.emplace_back(cnt - k);
+      }
+
+      for(ll i = 0; i < arr.size(); i++){
+         cout<<arr[i]<<" ";
+      }
+      cout<<"\n";
    }
 
    return 0;
