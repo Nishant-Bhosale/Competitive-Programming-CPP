@@ -38,7 +38,7 @@ int main(){
       }else{
          cout<<(n - 2)<<endl;
          for(ll i = 1; i <= n - 2; i++){
-            cout<<i<<" "<<(n - 2)<<" "<<(n - 1)<<endl;
+            cout<<i<<" "<<(n - 1)<<" "<<(n)<<endl;
          }
       }
    }
