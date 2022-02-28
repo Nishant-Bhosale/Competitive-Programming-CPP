@@ -19,7 +19,7 @@ int main(){
       string s;
       cin>>n>>s;
 
-      if(s[0] != '1' || s[1] != '1' || s[n] !='1'){
+      if(s[0] == '0' || s[1] == '0' || s[n] =='0'){
          cout<<"No"<<endl;
          continue;
       }
