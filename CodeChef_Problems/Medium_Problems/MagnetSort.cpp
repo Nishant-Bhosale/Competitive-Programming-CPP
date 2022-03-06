@@ -47,44 +47,33 @@ int main(){
          cout<<1<<endl;
          continue;
       }
-      
-      ll cnt = 0, idx = 0;
-      char cur;
-      for(ll i = 0; i < n - 1; i++){
-         if(arr[i] <= arr[i + 1]){
-            continue;
-         }
-         if(s[i] == 'N'){
-            cur = 'N';
-            idx = i;
-            break;
-         }else{
-            cur = 'S';
-            idx = i;
-            break;
-         }
-      }
+   
+      vector<ll> arr2 = arr;
+      vector<ll> temp = arr;
+      sort(arr2.begin(), arr2.end());
 
-      ll lidx = 0;
-      for(ll i = idx; i < n; i++){
-         if(cur == 'N'){
-            if(s[i] == 'S'){
-               lidx = i;
-            }
-         }else{
-            if(s[i] == 'N'){
-               lidx = i;
-            }
-         }
-      }
+      ll fn = 0, ln = 0, fs = 0, ls = 0;
 
-      if(lidx != (n - 1)){
-         cnt += 2;
-      }else{
-         cnt++;
-      }
+      fn = s.find_first_of('N');
+      ln = s.find_last_of('N');
 
-      cout<<cnt<<endl;
+      fs = s.find_first_of('S');
+      ls = s.find_last_of('S');
+
+      sort(arr.begin() + fn, arr.begin() + ls + 1);
+
+      if(arr == arr2){
+         cout<<1<<endl;
+         continue;
+      }
+      arr = temp; 
+      sort(arr.begin() + fs, arr.begin() + ln + 1);
+
+      if(arr == arr2){
+         cout<<1<<endl;
+         continue;
+      }
+      cout<<2<<endl;
    }
 
    return 0;
