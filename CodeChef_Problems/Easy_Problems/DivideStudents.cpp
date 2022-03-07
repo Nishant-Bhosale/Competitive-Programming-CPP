@@ -17,8 +17,6 @@ int main(){
             cin>>h;
             arr[i] = h;
          }
-
-         
       }
    }
    return 0;
