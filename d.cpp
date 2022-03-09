@@ -7,6 +7,41 @@ using namespace std;
 #define pi pair<int,int>
 
 typedef long long ll;
+void solve(){
+   string s;
+      string c;
+      cin>>s>>c;
+
+      if(s == c){
+         cout<<"YES"<<endl;
+         return;
+      }
+
+      if(count(s.begin(), s.end(), c[0]) == s.size()){
+         cout<<"YES"<<endl;
+         return;
+      }
+
+      if(s.size() == 1 && s != c){
+         cout<<"NO"<<endl;
+         return;
+      }
+      ll cnt = count(s.begin(), s.end(), c[0]);
+      ll idx = s.find(c[0]);
+      ll sz = s.size();
+
+      for(ll i = 0; i < cnt; i++){
+         for(ll j = 0; j < s.size(); j++){
+            if(s[j] == c[0]){
+               if(j % 2 == 0 && (sz - j - 1) % 2 == 0){
+                  cout<<"YES"<<endl;
+                  return;
+               }
+            }
+         }
+      }
+      cout<<"NO"<<endl;
+}
 
 int main(){
    ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
@@ -15,37 +50,7 @@ int main(){
    cin>>t;
 
    while(t--){
-      ll n, x;
-      cin>>n>>x;
-
-      vector<ll> arr(n);
-
-      map<ll,ll> mp;
-      for(ll i = 0; i < n; i++){
-         cin>>arr[i];
-         mp[arr[i]]++;
-      }
-
-      sort(arr.begin(), arr.end());
-
-      ll ans = 0;
-      for(ll i = 0; i < n; i++){
-         if(mp[arr[i]] == 0){
-            continue;
-         }
-
-         if(mp[arr[i]] != 0){
-            if(mp[arr[i] * x]){
-               mp[arr[i]]--;
-               mp[arr[i] * x]--;
-            }else{
-               mp[arr[i]]--;
-               ans++;
-            }
-         }
-      }
-
-      cout<<ans<<endl;
+      solve();
    }
 
    return 0;
