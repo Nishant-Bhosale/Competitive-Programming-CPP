@@ -18,23 +18,27 @@ int main(){
       ll n, m;
       cin>>n>>m;
 
-      vector<pair<ll,ll>> arr;
+      vector<pair<pair<ll,ll>,ll>> arr;
 
       for(ll i = 0; i < m; i++){
          ll a, b;
          cin>>a>>b;
-         arr.emplace_back(make_pair(b,a));
+         arr.emplace_back(make_pair(make_pair(b,a), i + 1));
       }
 
       sort(arr.begin(), arr.end());
 
+      vector<pair<ll,ll>> coors;
       ll sum = 0;
-      for(ll i = 0; i < (n + 1); i++){ 
-         sum += arr[i].second;
+      for(ll i = 0; i < 2*n; i++){
+         sum += arr[i].first.first;
+         coors.emplace_back(arr[i].first.second, arr[i].second);
       }
+
+      sort(coors.begin(), coors.end());
       cout<<sum<<endl;
-      for(ll i = 0; i < (n + 1); i++){ 
-         cout<<arr[i].second<<" "<<arr[i].first<<endl;
+      for(ll i = 0; i < n; i++){
+         cout<<coors[i].second<<" "<<coors[2*n - i - 1].second<<endl;
       }
    }
 
