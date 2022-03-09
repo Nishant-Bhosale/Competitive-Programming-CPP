@@ -8,7 +8,7 @@ using namespace std;
 
 typedef long long ll;
 
-void leftRotate(ll *nums, ll n, ll k){
+void leftRotate(int *nums, int n, int k){
    k %= n;
    reverse(nums, nums + k);
    reverse(nums + k, nums + n);
@@ -22,28 +22,28 @@ int main(){
    cin>>t;
 
    while(t--){
-      ll n;
+      int n;
       cin>>n;
       
-      ll arr[n];
-      for(ll i = 0; i < n; i++){
+      int arr[n];
+      for(int i = 0; i < n; i++){
          cin>>arr[i];
       }
-      ll ans [n - 1];
-      for(ll i = n - 1; i >= 0; i--){
-         ll x;
+      int ans [n - 1];
+      for(int i = n - 1; i >= 0; i--){
+         int x;
          for(x = 0; x < i; x++){
-            if(arr[x] == i + 1LL){
+            if(arr[x] == i + 1){
                break;
             }
          }
 
-         if(x == i) x--;
-         leftRotate(arr, i + 1LL, x + 1LL);
+         if(x == i) x =- 1;
+         leftRotate(arr, i + 1, x + 1);
          ans[i] = x + 1;
       }
 
-      for(ll i = 0; i < n; i++){
+      for(int i = 0; i < n; i++){
          cout<<ans[i]<<" ";
       }
 
