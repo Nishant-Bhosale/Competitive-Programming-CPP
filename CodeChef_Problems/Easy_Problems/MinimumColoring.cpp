@@ -45,7 +45,7 @@ int main(){
 
       if(p1 == 1 && p2 == 1){
          col[0] = 3;
-         col[1] = 3;
+         col[1] = 1;
       }
 
       for(ll i = 0; i < n; i++){
