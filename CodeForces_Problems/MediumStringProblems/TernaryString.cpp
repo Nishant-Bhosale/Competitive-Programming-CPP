@@ -29,19 +29,18 @@ int main(){
 
       vector<pair<char, ll>> c;
       
-      for(auto x : s){
-         if(c.empty() || c.back().first != x){
-            c.emplace_back(make_pair(x, 1));
+      for(ll i = 0; i < s.size(); i++){
+         if(c.empty() || c.back().first != s[i]){
+            c.emplace_back(make_pair(s[i], 1));
          }else{
             c.back().second++;
          }
       }
-      
-      ll m = c.size(), ans = INT_MAX;
 
-      for(ll i = 1; i < m - 1; i++){
+      ll ans = INT_MAX;
+      for(ll i = 1; i < c.size() - 2; i++){
          if(c[i - 1].first != c[i + 1].first){
-            ans = min(ans, 2 + c[i].second);
+            ans = min(ans, c[i].second + 2);
          }
       }
 
