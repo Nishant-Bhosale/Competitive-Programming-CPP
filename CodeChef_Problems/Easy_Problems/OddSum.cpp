@@ -17,25 +17,13 @@ int main(){
    while(t--){
       ll n;
       cin>>n;
-      vector<ll> arr(n);
-      for(ll i = 0;i<n;i++) cin>>arr[i];
 
-      if(count(all(arr), arr[0]) == arr.size()){
-         cout<<0<<endl;
+      if(n == 1 || n == 2){
+         cout<<1<<endl;
          continue;
       }
 
-      ll ans = 0;
-
-      for(ll i = 0; i < n - 1; i++){
-         if(arr[i] <= arr[i + 1]){
-            continue;
-         }else{
-            ans += abs(arr[i + 1] - arr[i]);
-         }
-      }
-
-      cout<<ans<<endl;
+      cout<<(1 + (n - 1) * (n - 2))<<endl;
    };
 
    return 0;
