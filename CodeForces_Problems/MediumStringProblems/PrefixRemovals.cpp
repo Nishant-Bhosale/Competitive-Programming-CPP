@@ -25,7 +25,7 @@ int main(){
 
       // cout<<s.find(s[3])<<endl;
       ll idx = 0;
-      for(ll i = 0; i < 1e9; i++){
+      9 for(ll i = 0; i < 1e9; i++){8
          ll cnt = 0;
          for(ll j = 1; j < s.size(); j++){
             if(s[j] == s[idx]){

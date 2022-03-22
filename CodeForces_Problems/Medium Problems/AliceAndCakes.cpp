@@ -38,7 +38,7 @@ int main(){
          pq.pop();
          ll val1 = (x / 2), val2 = ((x + 1)/ 2);
          if(mp.count(val1)){
-            mp[val1]--;
+            mp[val1]--; 
             n--;
          }else{
             pq.push(val1);
