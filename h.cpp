@@ -13,7 +13,6 @@ vector<ll> arr;
 
 void pre_calc(){
    ll num = 1;
-   vector<ll> arr;
 
    for(ll i = 0; i < 1e5; i++){
       arr.emplace_back(num);
@@ -27,6 +26,7 @@ int main(){
    pre_calc();
    ll t;
    cin>>t;
+   
    while(t--){
       ll n;
       cin>>n;
