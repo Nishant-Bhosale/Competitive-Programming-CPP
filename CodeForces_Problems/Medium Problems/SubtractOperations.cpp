@@ -18,11 +18,8 @@ int main(){
       ll n, k;
       cin>>n>>k;
       vector<ll> arr(n);
-      map<ll,ll> mp;
-      for(ll i = 0;i<n;i++) {
-         cin>>arr[i];
-         mp[arr[i]]++;
-      }
+      for(ll i = 0;i<n;i++) cin>>arr[i];
+
       bool flag = false;
 
       if(n == 1){
@@ -34,19 +31,20 @@ int main(){
          continue;
       }
 
-      for(ll i = 0; i < n; i++){
-         ll val = arr[i] + k;
-         if(mp[val] > 0){
+      sort(all(arr));
+
+      ll i = 0, j = 1;
+
+      while(i < n && j < n){
+         if(arr[i] + abs(k) == arr[j]){
             flag = true;
             break;
-         }
-         val = arr[i] - k;
-         if(mp[val] > 0){
-            flag = true;
-            break;
+         }else if(arr[i] + abs(k) < arr[j]){
+            i++;
+         }else{
+            j++;
          }
       }
-      
 
       cout<<(flag ? "YES" : "NO")<<endl;
    };
