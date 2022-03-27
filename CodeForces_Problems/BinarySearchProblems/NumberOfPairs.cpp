@@ -25,7 +25,7 @@ int main(){
          cin>>num;
          arr.emplace_back(num);
       }
-
+      
       sort(all(arr));
 
       ll cnt = 0;

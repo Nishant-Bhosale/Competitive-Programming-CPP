@@ -15,8 +15,8 @@ int main(){
    ll t;
    cin>>t;
    while(t--){
-      ll n, l, r;
-      cin>>n>>l>>r;
+      ll n, x;
+      cin>>n>>x;
 
       vector<ll> arr(n);
 
@@ -24,19 +24,13 @@ int main(){
          cin>>arr[i];
       }
 
-      ll cnt = 0;
-      for(ll i = 0; i < n - 1; i++){
-         ll j = i + 1;
-         while(j < n){
-            ll val = arr[i] + arr[j];
-            if(val >= l && val <= r){
-               cnt++;
-            }
-            j++;
-         }
-      }
+      ll ind = lower_bound(all(arr), x) - arr.begin();
 
-      cout<<cnt<<endl;
+      if(ind != n && arr[ind] == x){
+         cout<<ind<<endl;
+      }else{
+         cout<<"NO"<<endl;
+      }
    };
 
    return 0;
