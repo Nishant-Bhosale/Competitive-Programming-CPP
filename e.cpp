@@ -12,17 +12,24 @@ typedef long long ll;
 int main(){
    ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-   ll t;
-   cin>>t;
-   while(t--){
-      ll cnt = 0;
-      for(ll i = 1; i <= 1000; i++){
-         if(i % 3 == 0 && i % 5 != 0 && i % 7 != 0){
-            cnt++;
-         }
-      }
-      cout<<cnt<<endl;
-   };
+   ll num;
+   cin>>num;
+
+   ll originalNumber = num;
+   ll ans = 0;
+   while(originalNumber != 0){
+      ll remainder = originalNumber % 10;
+
+      ans += (remainder * remainder * remainder);
+
+      originalNumber /= 10;
+   }
+
+   if(ans == num){
+      cout<<"It is armstrong number"<<endl;
+   }else{
+      cout<<"It is not an armstrong number"<<endl;
+   }
 
    return 0;
 }
