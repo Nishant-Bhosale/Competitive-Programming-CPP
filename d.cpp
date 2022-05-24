@@ -97,3 +97,39 @@ void main(void){
    }
 }
 
+// Program to divide two numbers
+
+void main(void){
+   TRISB = 0;
+   unsigned int a, b, div;
+   a = 0x04;
+   b = 0x08;
+   div = b / a;
+
+   PORTB = div;   
+}
+
+void main(void){
+   unsigned int a, b, mul;
+   TRISB = 0;
+   a = 0x03;
+   b = 0x02;
+   mul = a * b;
+   PORTB = mul;
+}
+
+void main(void){
+   TRISB = 0x00;
+   LATB = 0xFF;
+
+   while(1){
+      LATB = ~LATB;
+      delay(200);
+   }
+}
+
+int main(){
+   cout<<"HELLO WORLD";
+   return 0;
+}
+
