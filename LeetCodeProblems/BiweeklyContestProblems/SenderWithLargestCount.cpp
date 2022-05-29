@@ -16,30 +16,26 @@ bool cmp(pair<string, int>& a, pair<string, int>& b){
 int main(){
    ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-   vector<string> messages =  {"How is leetcode for everyone","a b b c c d e f a f s","Leetcode is a useful for practice"};
+   vector<string> messages =  {"How is leetcode for everyone sa a ds s s w","a b b c c d e f a f s","Leetcode is a useful for practice"};
    vector<string> senders =   {"Zob","Max", "Charlie"};
    
 
    map<string, int> mp;
    int n = messages.size();
    for(int i = 0; i < n; i++){
-      cout<<(count(messages[i].begin(), messages[i].end(), ' '))<<endl;
       mp[senders[i]] += (count(messages[i].begin(), messages[i].end(), ' ') + 1);
    }
 
-   vector<pair<string, int>> arr;
+   string name = "";
+   int val = INT_MIN;
    for(auto it : mp){
-      cout<<it.first<<" "<<it.second<<endl;
-      arr.push_back(make_pair(it.first, it.second));
+      if(it.second > val || (it.first > name && it.second >= val)){
+         val = it.second;
+         name = it.first;
+      }
    }
-   
-   sort(arr.begin(), arr.end(), cmp);
-   for(auto it : mp){
-      cout<<it.first<<" "<<it.second<<endl;
-   }
-   
-   cout<<arr[n - 1].first<<endl;
-   // return arr[n - 1].first;
+
+   // return name;
 
    return 0;
 }
