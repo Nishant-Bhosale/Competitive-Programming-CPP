@@ -13,15 +13,27 @@ public:
             return false;
         }
         
-        map<ListNode*, int> mp;
-        ListNode* temp = head;
-        while(temp){
-            if(mp.count(temp)) return true;
-            mp[temp] = temp->val;
-            if(temp->next == NULL){
-                return false;
-            }
-            temp = temp->next;
+//         map<ListNode*, int> mp;
+//         ListNode* temp = head;
+//         while(temp){
+//             if(mp.count(temp)) return true;
+//             mp[temp] = temp->val;
+//             if(temp->next == NULL){
+//                 return false;
+//             }
+//             temp = temp->next;
+//         }
+        
+//         return false;
+        
+        ListNode* slow = head;
+        ListNode* fast = head;
+        
+        while(fast != NULL && fast->next != NULL){
+            slow = slow->next;
+            fast = fast->next->next;
+            
+            if(slow == fast) return true;
         }
         
         return false;
