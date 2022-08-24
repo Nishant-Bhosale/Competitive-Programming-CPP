@@ -14,7 +14,6 @@ public:
         }
         temp.push_back(nums[i]);
         getSubsets(i + 1, temp, nums);
-        // temp.erase(temp.begin() + i);
         temp.pop_back();
         getSubsets(i + 1, temp, nums);
     }

@@ -57,10 +57,27 @@ typedef long long ll;
 //    return isPalindrome(s, left + 1, right - 1);
 // }
 
-int fib(int n){
-   if(n == 0) return 0;
-   if(n == 1 || n == 2) return 1;
-   return fib(n - 1) + fib(n - 2);
+// int fib(int n){
+//    if(n == 0) return 0;
+//    if(n == 1 || n == 2) return 1;
+//    return fib(n - 1) + fib(n - 2);
+// }
+
+vector<vector<int>> ans;
+vector<int> arr = {1, 3, 4, 5, 1};
+void getAllSubsetsWithSumEqualToK(int i, vector<int>& temp, int sum, int k){
+   if(i == arr.size()){
+      if(sum == k){
+         ans.push_back(temp);
+      }
+      return;
+   }
+   temp.push_back(arr[i]);
+   sum += arr[i];
+   getAllSubsetsWithSumEqualToK(i + 1, temp, sum, k);
+   sum -= arr[i];
+   temp.pop_back();
+   getAllSubsetsWithSumEqualToK(i + 1, temp, sum, k);
 }
 
 int main(){
@@ -69,6 +86,14 @@ int main(){
    // reverseArray(0);
    // string s = "assssa";
    // isPalindrome(s, 0, s.size() - 1) ? cout<<"Is Palindrome? Yup!" : cout<<"NOT Palindrome!";
-   cout<<fib(7);
+   // cout<<fib(7);
+   vector<int> temp;
+   getAllSubsetsWithSumEqualToK(0, temp, 0, 5);
+   for(auto it : ans){
+      for(auto el : it){
+         cout<<el<<" ";
+      }
+      cout<<endl;
+   }
    return 0;
 }
