@@ -12,6 +12,7 @@ typedef long long ll;
 vector<vector<int>> ans;
 vector<int> arr = {1, 3, 4, 5, 1};
 void getAllSubsetsWithSumEqualToK(int i, vector<int>& temp, int sum, int k){
+   if(ans.size() == 1) return;
    if(i == arr.size()){
       if(sum == k){
          ans.push_back(temp);
